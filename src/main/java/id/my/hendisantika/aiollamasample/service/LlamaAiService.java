@@ -25,4 +25,9 @@ public class LlamaAiService {
         return new LlamaResponse().setMessage(llamaMessage);
     }
 
+    public LlamaResponse generateJoke(String topic) {
+        final String llamaMessage =
+                ollamaChatModel.call(String.format("Tell me a joke about %s", topic));
+        return new LlamaResponse().setMessage(llamaMessage);
+    }
 }
