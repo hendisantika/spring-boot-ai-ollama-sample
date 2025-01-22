@@ -6,6 +6,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -30,6 +31,12 @@ public class LlamaRestController {
             @RequestParam(value = "prompt", defaultValue = "Why is the sky blue?")
             String prompt) {
         final LlamaResponse aiResponse = llamaAiService.generateMessage(prompt);
+        return ResponseEntity.status(HttpStatus.OK).body(aiResponse);
+    }
+
+    @GetMapping("api/v1/ai/generate/joke/{topic}")
+    public ResponseEntity<LlamaResponse> generateJoke(@PathVariable String topic) {
+        final LlamaResponse aiResponse = llamaAiService.generateJoke(topic);
         return ResponseEntity.status(HttpStatus.OK).body(aiResponse);
     }
 }
