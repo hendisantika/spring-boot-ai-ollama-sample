@@ -1,5 +1,6 @@
 package id.my.hendisantika.aiollamasample.service;
 
+import id.my.hendisantika.aiollamasample.model.LlamaResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.ai.ollama.OllamaChatModel;
 import org.springframework.stereotype.Service;
@@ -18,4 +19,10 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class LlamaAiService {
     private final OllamaChatModel ollamaChatModel;
+
+    public LlamaResponse generateMessage(String promptMessage) {
+        final String llamaMessage = ollamaChatModel.call(promptMessage);
+        return new LlamaResponse().setMessage(llamaMessage);
+    }
+
 }
