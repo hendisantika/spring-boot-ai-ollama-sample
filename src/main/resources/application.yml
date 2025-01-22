@@ -1,9 +1,11 @@
 spring:
-  name: spring-boot-ai-ollama-sample
+  application:
+    name: spring-boot-ai-ollama-sample
   ai:
     ollama:
       base-url: http://localhost:11434/
       chat:
         options:
-          model: llama2
+          #          model: llama2
+          model: llama3.2:3b
           temperature: 0.7
