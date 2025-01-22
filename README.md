@@ -37,6 +37,116 @@ configuration, and data into a single package, defined by a Modelfile.
 Facebook parent company’s response to OpenAI’s GPT models and Google’s AI models like PaLM 2 — but with one key
 difference: it’s freely available for almost anyone to use for research and commercial purposes.
 
+REQUEST -->
+
+```shell
+curl --location 'http://localhost:8080/api/v1/ai/generate?prompt=create%20a%20catchy%20headline%20for%20%22motivation%22'
+```
+
+RESPONSE <--
+
+```json
+{
+  "message": "Unleash Your Inner Rockstar: Find Your Motivation Today!
+  This
+  headline
+  uses
+  a
+  playful
+  and
+  attention-grabbing
+  approach
+  to
+  motivate
+  readers
+  to
+  take
+  action
+  and
+  find
+  their
+  inner
+  drive.
+  The
+  use
+  of
+  the
+  phrase
+  'inner rockstar'
+  suggests
+  that
+  everyone
+  has
+  the
+  potential
+  to
+  be
+  a
+  star
+  in
+  their
+  own
+  life,
+  and
+  that
+  finding
+  motivation
+  is
+  the
+  key
+  to
+  unlocking
+  that
+  potential.
+  The
+  word
+  'today'
+  adds
+  a
+  sense
+  of
+  urgency
+  and
+  encourages
+  readers
+  to
+  take
+  action
+  immediately.
+  Overall,
+  this
+  headline
+  is
+  designed
+  to
+  inspire
+  and
+  energize
+  readers
+  to
+  start
+  their
+  journey
+  towards
+  success.
+  "
+}
+```
+
+REQUEST -->
+
+```json
+curl --location 'http://localhost:8080/api/v1/ai/generate/joke/teacher'
+```
+
+RESPONSE <--
+
+```json
+{
+  "message": "Why did the teacher wear sunglasses in class?\n\nBecause her students were so bright! (get it?)"
+}
+```
+
 http://localhost:8080/api/v1/ai/generate?prompt=Spring%20Boot
 
 ```json
